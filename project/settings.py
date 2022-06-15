@@ -42,13 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #libs
+    # libs
     'rest_framework',
     'rest_framework.authtoken',
     'drf_yasq',
     'django_filters',
 
-    #applications
+    # applications
     'applications.account',
     'applications.product',
 ]
