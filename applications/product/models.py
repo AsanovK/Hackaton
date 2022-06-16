@@ -11,7 +11,7 @@ User = get_user_model()
 class Product(models.Model):
     title = models.CharField(max_length=80, verbose_name='Title')
     description = models.TextField(verbose_name='Description')
-    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Price')
+    price = models.DecimalField(max_digits=20, decimal_places=3, verbose_name='Price')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='Product')
     in_stock = models.BooleanField(default=True)
     quantity = models.PositiveIntegerField(default=1)
@@ -27,4 +27,5 @@ class ProductImage(models.Model):
 
     def __str__(self):
         return self.product.title
+    
     

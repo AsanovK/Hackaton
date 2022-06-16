@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'applications.account',
     'applications.product',
     'applications.category',
+    'applications.review',
     'applications.comment',
 ]
 
@@ -137,6 +138,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_URL = 'images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -157,4 +161,6 @@ REST_FRAMEWORK = {
     "DEFAULT_FILTER_BACKENDS":[
         "django_filters.rest_framework.DjangoFilterBackend"
     ],
+    "DEFAULT_PAGINATION_CLASS": 'rest_framework.pagination.LimitOffsetPagination',
+    "PAGE_SIZE": 3,
 }
