@@ -45,5 +45,6 @@ urlpatterns = [
     path('category/', include('applications.category.urls')),
     path('review/', include('applications.review.urls')),
     path('comment/', include('applications.comment.urls')),
+    path('order/', include('applications.order.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
