@@ -8,12 +8,12 @@ User = get_user_model()
 class RegistrationSerializer(serializers.Serializer):
     email = serializers.EmailField(required=True)
     password = serializers.CharField(min_length=6, required=True)
-    password_confirmation = serializers.CharField(max_length=6, required=True)
+    password_confirmation = serializers.CharField(min_length=6, required=True)
     first_name = serializers.CharField(required=False)
-    last_name = serializers.CharField(required=True)
+    last_name = serializers.CharField(required=False)
 
     def validate_email(self, email):
-        if User.objects.filter(emial=email).exists():
+        if User.objects.filter(email=email).exists():
             raise serializers.ValidationError('Email is already taken!')
         return email
 
